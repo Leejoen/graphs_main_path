@@ -1,0 +1,244 @@
+.hat {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    justify-content: space-evenly;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.hat .title {
+    font-weight: 600;
+    font-size: 35px;
+    margin: 0;
+}
+
+.hat #tops_setting {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #000;
+    font-weight: 600;
+    font-size: 30px;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 1px 6px;
+}
+
+.hat #tops_setting:hover {
+    cursor: pointer;
+}
+
+.hat #tops_setting option {
+    background-color: #fff;
+    text-align: center;
+}
+
+.hat #tops_setting option:checked {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #000;
+}
+
+.hat #tops_setting option:hover {
+    background-color: #fff;
+    color: #ff0000;
+}
+
+.hat .draw {
+    height: auto;
+    width: auto;
+    font-size: 25px;
+    font-weight: 500;
+    border: 2px solid #000;
+    background-color: #fff;
+}
+
+.hat .draw:hover {
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 5px 5px 1px 1px rgba(0, 0, 0, .6);
+    transition: 1s;
+}
+
+.teleport {
+    text-decoration: none;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-left: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+}
+
+.name .title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.name .change {
+    margin-left: 20px;
+    background-color: #fff;
+    font-weight: 500;
+    border: 2px solid #000;
+}
+
+.name .change:hover {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
+    transition: .5s;
+}
+
+.name .name_change {
+    height: 35px;
+    width: 250px;
+    font-size: 20px;
+}
+
+.name .name_change:hover, .name .name_change:focus {
+    border: 2px solid #000;
+    background-color: rgba(0, 0, 0, .2);
+    font-weight: 500;
+    height: 35px;
+    width: 250px;
+    font-size: 20px;
+}
+
+.dangerous {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+}
+
+.dangerous #id_dangerous {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+}
+
+.dangerous #id_dangerous label {
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dangerous #id_dangerous input {
+    height: 17px;
+    width: 17px;
+}
+
+.dangerous .title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.table_edges {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    height: 50%;
+    border: 2px solid #000;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.table_edges .in {
+    border-right: .5px solid #000;
+}
+
+.table_edges .out {
+    border-left: .5px solid #000;
+}
+
+.table_edges .in, .table_edges .out {
+    width: 50%;
+    padding-left: 5px;
+}
+
+.table_edges .in .title, .table_edges .out .title {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.table_edges .in #incoming_edge, .table_edges .out #outgoing_edge {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    font-weight: 500;
+    border: 2px solid #000;
+}
+
+.table_edges .in #incoming_edge:hover, .table_edges .out #outgoing_edge:hover {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
+    transition: .5s;
+}
+
+.table_edges .in_div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.table_edges .in_div .incoming, .table_edges .in_div .outgoing {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #000;
+    font-weight: 500;
+    font-size: 17px;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 1px 6px;
+}
+
+.table_edges .in_div .incoming:hover, .table_edges .in_div .outgoing:hover {
+    cursor: pointer;
+}
+
+.table_edges .in_div .incoming option, .table_edges .in_div .outgoing option {
+    background-color: #fff;
+}
+
+.table_edges .in_div .incoming option:checked, .table_edges .in_div .outgoing option:checked {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+
+.table_edges .in_div .incoming option:hover, .table_edges .in_div .outgoing option:hover {
+    background-color: #fff;
+    color: #ff0000;
+}
+
+.table_edges .in_div .weight {
+    height: auto;
+    width: 50%;
+    font-size: 17px;
+    background-color: #ffffff;
+}
+
+.table_edges .in_div .weight:hover, .table_edges .in_div .weight:focus {
+    border: 2px solid #000;
+    background-color: rgba(0, 0, 0, .2);
+    font-size: 17px;
+}
