@@ -5,5 +5,5 @@ urlpatterns = [
     path('', views.index, name='main'),
     path('params', views.params, name='params'),
     path('visual', views.visual, name='visual'),
-    path('<int:pk>', views.Param.as_view(), name='param')
+    path('param/<int:pk>', views.Param.as_view(), name='param')
 ]
