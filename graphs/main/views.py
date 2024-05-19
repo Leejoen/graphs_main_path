@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.template.defaulttags import register
-from django.views. generic import DetailView, ListView, CreateView
+from django.views. generic import DetailView, UpdateView
 from .models import Count, Names
 from .forms import CountForm, NamesForm
 from .connect_db import connect
@@ -40,10 +40,11 @@ def params(request):
 
     return render(request, 'main/params.html', data)
 
-class Param(DetailView):
+class Param(UpdateView):
     model = Names
     template_name = 'main/param.html'
     context_object_name = 'name'
+    form_class = NamesForm
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -51,8 +52,8 @@ class Param(DetailView):
         count = Names.objects.all()
         context['count'] = count
         
-        form_name = NamesForm()
-        context['form_name'] = form_name
+        '''form_name = NamesForm()
+        context['form_name'] = form_name'''
 
         return context
 

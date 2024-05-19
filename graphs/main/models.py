@@ -17,9 +17,12 @@ class Edges(models.Model):
         verbose_name_plural = 'Ребра'
 
 class Names(models.Model):
-    num = models.IntegerField('Номер',primary_key=True)
+    num = models.IntegerField('Номер', primary_key=True)
     name = models.CharField('Название', max_length=100)
-    dangerous = models.BooleanField('Опасное сост.')
+    dangerous = models.BooleanField('Опасное состояние')
+
+    def get_absolute_url(self):
+        return f'/param/{self.num}'
 
     class Meta:
         verbose_name = 'Название'

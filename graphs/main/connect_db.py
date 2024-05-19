@@ -5,7 +5,7 @@ def connect():
     try:
         sqlite_connection = sqlite3.connect('db.sqlite3')
         cursor = sqlite_connection.cursor()
-        print("База успешно подключена\n")
+        # print("База успешно подключена\n")
 
         cursor.execute('''	
             DELETE FROM main_names;
@@ -16,7 +16,7 @@ def connect():
             SELECT * FROM main_count; 
         ''')
         record = cursor.fetchall()
-        print(record)
+        # print(record)
 
         for i in range(1, record[0][1] + 1):
             cursor.execute(f'''
@@ -29,7 +29,7 @@ def connect():
             SELECT * FROM main_names;
         ''')
         rec = cursor.fetchall()
-        print(rec)
+        # print(rec)
 
         cursor.execute('''
             DELETE FROM main_count;

@@ -25,7 +25,7 @@
             {% for el in count %}
                 <option value="{% url 'param' el.num %}" {% if el.num == name.num %}selected{% endif %}>{{ el.name }}</option>
             {% endfor %}
-            <!--<option value="{{ name.num }}">{{ name.num }}</option>-->
+            <!--<option value="{{ name.num }}">{{ name.name }}</option>-->
         </select>
         <p class="title">Настройка параметров вершин</p>
         <a class="teleport" href="visual"><button class="draw">Визуализировать</button></a>
@@ -36,7 +36,7 @@
 
         <div class="name">
             <p class="title">Название вершины:</p>
-            {{ form_name.name }}
+            {{ form.name }}
             <!--{{ name.name }}-->
             <button class="change" type="submit">Изменить</button>
 
@@ -44,9 +44,10 @@
 
         <div class="dangerous">
             <p class="title">Опасное состояние:</p>
-            {{ form_name.dangerous }}
+            {{ form.dangerous }}
             <!--{{ name.dangerous }}-->
         </div>
+        <div style="position: absolute; visibility: hidden;">{{form.num}}</div>
     </form>
 
     <div class="table_edges">
