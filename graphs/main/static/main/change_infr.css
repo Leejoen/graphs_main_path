@@ -1,0 +1,44 @@
+.hat {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    justify-content: space-evenly;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.naming {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-left: 40px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+ 
+.save-name-infr{   
+    margin-left: 25px;
+    background-color: #fff;
+    font-weight: 500;
+    border: 2px solid #000;
+    font-size: 20px;
+}
+
+    
+.save-name-infr:hover {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
+    transition: .5s;
+}
+
+.naming .name {
+    font-weight: 200;
+    font-size: 20px;
+    margin-right: 20px;
+    background: transparent;
+}

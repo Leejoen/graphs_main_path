@@ -51,3 +51,8 @@ class NamesForm(ModelForm):
                 },
                 choices={'True': 'Да', 'False': 'Нет'})
         }
+
+class InfrInfo(ModelForm): #добавление для задания инфраструктуры
+    class Meta:
+        model = Infr
+        fields = []
