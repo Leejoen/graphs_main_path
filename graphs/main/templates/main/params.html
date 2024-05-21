@@ -24,27 +24,35 @@
         <select name="tops_setting" id="tops_setting" onchange="if (this.value) window.location.href = this.value">
             <option disabled selected hidden>Укажите вершину</option>
             {% for el in count %}
-                <option value="{% url 'param' el.num %}">{{ el.name }}</option>
+                <option value="{% url 'upd_name' el.num %}">{{ el.name }}</option>
             {% endfor %}
         </select>
         <p class="title">Настройка параметров вершин</p>
         <a class="teleport" href="visual"><button class="draw">Визуализировать</button></a>
     </div>
 
-    <form method="post">
+    <form method="post" class="form_name">
         {% csrf_token %}
 
         <div class="name">
             <p class="title">Название вершины:</p>
-            {{ form_name.name }}
-            <button class="change" type="submit">Изменить</button>
+            <input type="text" name="name" placeholder="Новое название" class="name_change" maxlength="100" required="" id="id_name" disabled>
+            <button class="change" type="submit" disabled>Изменить</button>
 
 
         </div>
 
         <div class="dangerous">
             <p class="title">Опасное состояние:</p>
-
+            <div id="id_dangerous"><div>
+                <label for="id_dangerous_0">
+                    <input type="radio" name="dangerous" value="True" id="id_dangerous_0" disabled> Да</label>
+            </div>
+            <div>
+                <label for="id_dangerous_1">
+                    <input type="radio" name="dangerous" value="False" id="id_dangerous_1" disabled> Нет</label>
+            </div>
+            </div>
         </div>
     </form>
 
@@ -54,7 +62,7 @@
             <div id="all_in_div_in">
 
             </div>
-            <button id="incoming_edge" onclick="addRow_in()">Добавить</button>
+            <button id="incoming_edge" onclick="addRow_in()" disabled>Добавить</button>
         </div>
 
         <div class="out">
@@ -62,7 +70,7 @@
             <div id="all_in_div_out">
 
             </div>
-            <button id="outgoing_edge" onclick="addRow_out()">Добавить</button>
+            <button id="outgoing_edge" onclick="addRow_out()" disabled>Добавить</button>
         </div>
     </div>
 </body>

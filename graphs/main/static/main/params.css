@@ -68,6 +68,10 @@
     text-decoration: none;
 }
 
+.form_name {
+    opacity: .5;
+}
+
 .name {
     display: flex;
     flex-direction: row;
@@ -92,22 +96,7 @@
     border: 2px solid #000;
 }
 
-.name .change:hover {
-    background-color: rgba(0, 0, 0, .2);
-    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
-    transition: .5s;
-}
-
 .name .name_change {
-    height: 35px;
-    width: 250px;
-    font-size: 20px;
-}
-
-.name .name_change:hover, .name .name_change:focus {
-    border: 2px solid #000;
-    background-color: rgba(0, 0, 0, .2);
-    font-weight: 500;
     height: 35px;
     width: 250px;
     font-size: 20px;
@@ -150,6 +139,7 @@
 }
 
 .table_edges {
+    opacity: .5;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -185,60 +175,4 @@
     background-color: #fff;
     font-weight: 500;
     border: 2px solid #000;
-}
-
-.table_edges .in #incoming_edge:hover, .table_edges .out #outgoing_edge:hover {
-    background-color: rgba(0, 0, 0, .2);
-    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
-    transition: .5s;
-}
-
-.table_edges .in_div {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-.table_edges .in_div .incoming, .table_edges .in_div .outgoing {
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #000;
-    font-weight: 500;
-    font-size: 17px;
-    width: auto;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    padding: 1px 6px;
-}
-
-.table_edges .in_div .incoming:hover, .table_edges .in_div .outgoing:hover {
-    cursor: pointer;
-}
-
-.table_edges .in_div .incoming option, .table_edges .in_div .outgoing option {
-    background-color: #fff;
-}
-
-.table_edges .in_div .incoming option:checked, .table_edges .in_div .outgoing option:checked {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #000;
-}
-
-.table_edges .in_div .incoming option:hover, .table_edges .in_div .outgoing option:hover {
-    background-color: #fff;
-    color: #ff0000;
-}
-
-.table_edges .in_div .weight {
-    height: auto;
-    width: 50%;
-    font-size: 17px;
-    background-color: #ffffff;
-}
-
-.table_edges .in_div .weight:hover, .table_edges .in_div .weight:focus {
-    border: 2px solid #000;
-    background-color: rgba(0, 0, 0, .2);
-    font-size: 17px;
 }

@@ -22,7 +22,7 @@ class Names(models.Model):
     dangerous = models.BooleanField('Опасное состояние')
 
     def get_absolute_url(self):
-        return f'/param/{self.num}'
+        return f'/edges/{self.num}'
 
     class Meta:
         verbose_name = 'Название'

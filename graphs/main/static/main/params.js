@@ -13,11 +13,9 @@ function addRow_in() {
       inp = inp + inp_t;
     }
   }
-  inp = inp + `</select>\n<input type="number" placeholder="Вес" class="weight">`;
+  inp = inp + `</select>\n<input type="number" placeholder="Вес" class="weight" min=0 max=1 value=0 step=.1>`;
   
-
-  var abc = '{{ form.name }}'
-  div.innerHTML = abc;
+  div.innerHTML = inp;
 
   document.getElementById('all_in_div_in').appendChild(div);
 }
