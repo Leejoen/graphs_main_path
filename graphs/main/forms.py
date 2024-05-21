@@ -1,7 +1,8 @@
 from .models import Count
 from .models import Edges
 from .models import Names
-from django.forms import ModelForm, NumberInput, TextInput, CheckboxInput, RadioSelect
+from django.forms import ModelForm, NumberInput, TextInput,CheckboxInput, RadioSelect
+from multiform import MultiFormMixin, ProcessMultipleFormsView, BaseMultipleFormsView, MultiFormsView
 
 class CountForm(ModelForm):
     class Meta:
