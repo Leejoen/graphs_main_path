@@ -15,7 +15,9 @@ function addRow_in() {
   }
   inp = inp + `</select>\n<input type="number" placeholder="Вес" class="weight">`;
   
-  div.innerHTML = inp;
+
+  var abc = '{{ form.name }}'
+  div.innerHTML = abc;
 
   document.getElementById('all_in_div_in').appendChild(div);
 }

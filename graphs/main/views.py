@@ -1,8 +1,9 @@
+from django.forms.models import BaseModelForm
 from django.shortcuts import render, redirect
 from django.template.defaulttags import register
-from django.views. generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView
 from .models import Count, Names
-from .forms import CountForm, NamesForm
+from .forms import CountForm, NamesForm, EdgesForm
 from .connect_db import connect
 
 @register.filter
@@ -44,16 +45,15 @@ class Param(UpdateView):
     model = Names
     template_name = 'main/param.html'
     context_object_name = 'name'
-    form_class = NamesForm
+    form_classes = {'form': NamesForm, 'form2': EdgesForm}
+
+    
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
 
         count = Names.objects.all()
         context['count'] = count
-        
-        '''form_name = NamesForm()
-        context['form_name'] = form_name'''
 
         return context
 

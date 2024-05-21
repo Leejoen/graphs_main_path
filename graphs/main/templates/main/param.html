@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
-    <div id="costil" class="costil" style="position: absolute; visibility: hidden;">
+    <div id="costil" class="costil" style="position: absolute; visibility: hidden; left: -100%;">
         {% for el in count %}
             <div>{{ el.name }}</div>
         {% endfor %}
@@ -47,14 +47,24 @@
             {{ form.dangerous }}
             <!--{{ name.dangerous }}-->
         </div>
-        <div style="position: absolute; visibility: hidden;">{{form.num}}</div>
+        <div style="position: absolute; visibility: hidden; left: -100%;">{{form.num}}</div>
     </form>
 
     <div class="table_edges">
         <div class="in">
             <p class="title">Входящие рёбра:</p>
             <div id="all_in_div_in">
-
+                {% for el in count %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div style="margin-top: 10px;">
+                            <span>Откуда</span>{{form.out}}<br>
+                            <span>Куда</span>{{form.to}}<br>
+                            <span>Вес</span>{{form.weight}}<br>
+                        </div>
+                        <button type="submit">Save</button>
+                    </form>
+                {% endfor %}
             </div>
             <button id="incoming_edge" onclick="addRow_in()">Добавить</button>
         </div>

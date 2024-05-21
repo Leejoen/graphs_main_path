@@ -1,7 +1,7 @@
 from .models import Count
 from .models import Edges
 from .models import Names
-from django.forms import ModelForm, NumberInput, TextInput, CheckboxInput, RadioSelect
+from django.forms import ModelForm, NumberInput, TextInput, CheckboxInput, RadioSelect, Select
 
 class CountForm(ModelForm):
     class Meta:
@@ -25,7 +25,20 @@ class EdgesForm(ModelForm):
         fields = ['out', 'to', 'weight']
 
         widgets = {
+            'out': NumberInput(attrs={
+                'value': 1
+            }),
 
+            'to': Select(attrs={
+                
+            }),
+
+            'weight': NumberInput(attrs={
+                'min': 0,
+                'max': 1,
+                'value': 0,
+                'step': .1
+            })
         }
 
 class NamesForm(ModelForm):
