@@ -27,3 +27,8 @@ class Names(models.Model):
     class Meta:
         verbose_name = 'Название'
         verbose_name_plural = 'Названия'
+
+
+# class Infr(models.Model):
+#     num = models.IntegerField('Порядковый номер', primary_key=True)
+#     name = models.TextField('Название', max_length=200)
