@@ -28,3 +28,4 @@ class Names(models.Model):
 class Infr(models.Model):
     num = models.IntegerField('Порядковый номер', primary_key=True)
     name = models.TextField('Название', max_length=200)
+    description = models.TextField('Корректировка')
