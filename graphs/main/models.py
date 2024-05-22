@@ -29,6 +29,16 @@ class Names(models.Model):
         verbose_name_plural = 'Названия'
 
 
-# class Infr(models.Model):
-#     num = models.IntegerField('Порядковый номер', primary_key=True)
-#     name = models.TextField('Название', max_length=200)
+class Infr(models.Model):
+    num = models.IntegerField('Порядковый номер', primary_key=True)
+    name = models.TextField('Название', max_length=200)
+    description = models.TextField('Корректировка')
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Инфраструктура'
+        verbose_name_plural = 'Инфраструктуры'
+
+        
