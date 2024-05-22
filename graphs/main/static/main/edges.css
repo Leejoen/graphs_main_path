@@ -84,32 +84,18 @@
     margin-right: 20px;
 }
 
+.name .p_name {
+    margin: 0;
+    font-weight: 350;
+    font-size: 20px;
+}
+
 .name .change {
+    opacity: .5;
     margin-left: 20px;
     background-color: #fff;
     font-weight: 500;
     border: 2px solid #000;
-}
-
-.name .change:hover {
-    background-color: rgba(0, 0, 0, .2);
-    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
-    transition: .5s;
-}
-
-.name .name_change {
-    height: 35px;
-    width: 250px;
-    font-size: 20px;
-}
-
-.name .name_change:hover, .name .name_change:focus {
-    border: 2px solid #000;
-    background-color: rgba(0, 0, 0, .2);
-    font-weight: 500;
-    height: 35px;
-    width: 250px;
-    font-size: 20px;
 }
 
 .dangerous {
@@ -122,30 +108,17 @@
     height: auto;
 }
 
-.dangerous #id_dangerous {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
-}
-
-.dangerous #id_dangerous label {
-    margin-right: 50px;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.dangerous #id_dangerous input {
-    height: 17px;
-    width: 17px;
-}
-
 .dangerous .title {
     margin: 0;
     font-weight: 500;
     font-size: 25px;
     margin-right: 20px;
+}
+
+.dangerous .p_dangerous {
+    margin: 0;
+    font-weight: 350;
+    font-size: 20px;
 }
 
 .table_edges {

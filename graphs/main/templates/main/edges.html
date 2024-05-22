@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,18 +37,17 @@
 
         <div class="name">
             <p class="title">Название вершины:</p>
-            <!--{{ form.name }}-->
-            {{ name.name }}
-            <button class="change" type="submit">Изменить</button>
+            <p class="p_name">{{ name.name }}</p>
+            <button class="change" type="submit" disabled>Изменить</button>
 
         </div>
 
         <div class="dangerous">
             <p class="title">Опасное состояние:</p>
-            <!--{{ form.dangerous }}-->
-            {{ name.dangerous }}
+            <p class="p_dangerous">{% if name.dangerous == True %}Да
+            {% else %}Нет
+            {% endif %}</p>
         </div>
-        <div style="position: absolute; visibility: hidden; left: -100%;">{{form.num}}</div>
     </form>
 
     <div class="table_edges">
@@ -58,7 +58,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <div style="margin-top: 10px;">
-                            <span>Откуда</span>{{form.out}}<br>
+                            <span>Откуда</span>{% render_field form.out value=name.num %}<br>
                             <span>Куда</span>{{form.to}}<br>
                             <span>Вес</span>{{form.weight}}<br>
                         </div>

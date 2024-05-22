@@ -29,7 +29,7 @@ class EdgesForm(ModelForm):
 
         widgets = {
             'out': NumberInput(attrs={
-                'value': 1
+                
             }),
 
             'to': Select(attrs={
