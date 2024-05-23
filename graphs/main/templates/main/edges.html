@@ -51,28 +51,20 @@
     </form>
 
     <div class="table_edges">
-        <div class="in">
-            <p class="title">Входящие рёбра:</p>
-            <div id="all_in_div_in">
-                {% for el in count %}
-                    <form method="post">
-                        {% csrf_token %}
-                        <div style="margin-top: 10px;">
-                            <span>Откуда</span>{% render_field form.out value=name.num %}<br>
-                            <span>Куда</span>{{form.to}}<br>
-                            <span>Вес</span>{{form.weight}}<br>
-                        </div>
-                        <button type="submit">Save</button>
-                    </form>
-                {% endfor %}
-            </div>
-            <button id="incoming_edge" onclick="addRow_in()">Добавить</button>
-        </div>
-
         <div class="out">
             <p class="title">Выходящие рёбра:</p>
             <div id="all_in_div_out">
-
+                {% for el in count %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div style="margin-top: 10px;" class="in_div">
+                            {% render_field form.out value=name.num %}
+                            {{form.to}}
+                            {{form.weight}}
+                            <button type="submit" class="save_edges"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                {% endfor %}
             </div>
             <button id="outgoing_edge" onclick="addRow_out()">Добавить</button>
         </div>
