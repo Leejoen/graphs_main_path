@@ -61,9 +61,7 @@ class UpdName(UpdateView):
     
 
 class CreateEdges(CreateView):
-    model = Edges
     template_name = 'main/edges.html'
-    
     form_class = EdgesForm
 
     def get_context_data(self, *, object_list=None, **kwargs):
