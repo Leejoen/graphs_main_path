@@ -12,6 +12,9 @@ class Edges(models.Model):
     to = models.IntegerField('2', choices=((None, 'None'), (1, 'Вершина 1'), (2, 'Вершина 2'), (3, 'Вершина 3')))
     weight = models.IntegerField('3')
 
+    def get_absolute_url(self):
+        return f'/edges/{self.num}'
+
     class Meta:
         verbose_name = 'Ребро'
         verbose_name_plural = 'Ребра'

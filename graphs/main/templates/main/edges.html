@@ -24,29 +24,39 @@
     <div class="hat">
         <select name="tops_setting" id="tops_setting" onchange="if (this.value) window.location.href = this.value">
             {% for el in count %}
-                <option value="{% url 'upd_name' el.num %}" {% if el.num == name.num %}selected{% endif %}>{{ el.name }}</option>
+                <option value="{% url 'upd_name' el.num %}" {% if el.num == request.path|get_pk %}selected{% endif %}>{{ el.name }}</option>
             {% endfor %}
             <!--<option value="{{ name.num }}">{{ name.name }}</option>-->
         </select>
         <p class="title">Настройка параметров вершин</p>
         <a class="teleport" href="visual"><button class="draw">Визуализировать</button></a>
     </div>
-
+    
     <form method="post">
         {% csrf_token %}
 
         <div class="name">
             <p class="title">Название вершины:</p>
-            <p class="p_name">{{ name.name }}</p>
+            <p class="p_name">
+                {% for el in count %}
+                    {% if el.num == request.path|get_pk %}
+                        {{ el.name }}
+                    {% endif %}
+                {% endfor %}</p>
             <button class="change" type="submit" disabled>Изменить</button>
 
         </div>
 
         <div class="dangerous">
             <p class="title">Опасное состояние:</p>
-            <p class="p_dangerous">{% if name.dangerous == True %}Да
-            {% else %}Нет
-            {% endif %}</p>
+            <p class="p_dangerous">
+                {% for el in count %}
+                    {% if el.num == request.path|get_pk %}
+                        {% if el.dangerous == True %}Да
+                        {% else %}Нет
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}</p>
         </div>
     </form>
 
@@ -54,17 +64,17 @@
         <div class="out">
             <p class="title">Выходящие рёбра:</p>
             <div id="all_in_div_out">
-                {% for el in count %}
+                
                     <form method="post">
                         {% csrf_token %}
                         <div style="margin-top: 10px;" class="in_div">
-                            {% render_field form.out value=name.num %}
-                            {{form.to}}
-                            {{form.weight}}
+                            {% render_field form.out value=request.path|get_pk %}
+                            {{ form.to }}
+                            {{ form.weight }}
                             <button type="submit" class="save_edges"><i class="fa fa-check" aria-hidden="true"></i></button>
                         </div>
                     </form>
-                {% endfor %}
+                
             </div>
             <button id="outgoing_edge" onclick="addRow_out()">Добавить</button>
         </div>
