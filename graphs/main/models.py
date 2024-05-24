@@ -10,7 +10,10 @@ class Count(models.Model):
 class Edges(models.Model):
     out = models.IntegerField('1')
     to = models.IntegerField('2', choices=((None, 'None'), (1, 'Вершина 1'), (2, 'Вершина 2'), (3, 'Вершина 3')))
-    weight = models.IntegerField('3')
+    weight = models.FloatField('3')
+
+    def get_absolute_url(self):
+        return f'/params'
 
     class Meta:
         verbose_name = 'Ребро'

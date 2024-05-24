@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h1>Страница для тестов</h1>
+    <h3>Тест формы с рёбрами</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Save</button>
+    </form>
+
+    {% for el in edges %}
+        <p>{{ el.to }}</p>
+    {% endfor %}
+</body>
+</html>

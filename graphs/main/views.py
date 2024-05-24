@@ -10,6 +10,10 @@ from .connect_db import connect
 def get_range(value):
     return range(1, value + 1)
 
+@register.filter
+def get_pk(path):
+    return int(path.replace('/edges/', ''))
+
 def index(request):
     if request.method == 'POST':
         form = CountForm(request.POST)
@@ -56,10 +60,8 @@ class UpdName(UpdateView):
         return context
     
 
-class CreateEdges(UpdateView):
-    model = Names
+class CreateEdges(CreateView):
     template_name = 'main/edges.html'
-    context_object_name = 'name'
     form_class = EdgesForm
 
     def get_context_data(self, *, object_list=None, **kwargs):

@@ -125,33 +125,28 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 50%;
+    width: auto;
+    min-width: 30%;
+    max-width: max-content;
     height: 50%;
     border: 2px solid #000;
     margin-left: 25px;
     margin-top: 20px;
 }
 
-.table_edges .in {
-    border-right: .5px solid #000;
-}
-
 .table_edges .out {
-    border-left: .5px solid #000;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.table_edges .in, .table_edges .out {
-    width: 50%;
-    padding-left: 5px;
-}
-
-.table_edges .in .title, .table_edges .out .title {
+.table_edges .out .title {
     font-size: 25px;
     font-weight: 500;
     margin: 0;
 }
 
-.table_edges .in #incoming_edge, .table_edges .out #outgoing_edge {
+.table_edges .out #outgoing_edge {
     margin-top: 20px;
     margin-bottom: 10px;
     background-color: #fff;
@@ -159,7 +154,7 @@
     border: 2px solid #000;
 }
 
-.table_edges .in #incoming_edge:hover, .table_edges .out #outgoing_edge:hover {
+.table_edges .out #outgoing_edge:hover {
     background-color: rgba(0, 0, 0, .2);
     box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
     transition: .5s;
@@ -171,40 +166,42 @@
     margin-top: 10px;
 }
 
-.table_edges .in_div .incoming, .table_edges .in_div .outgoing {
+.table_edges .in_div .outgoing {
     height: auto;
     background-color: rgba(0, 0, 0, 0.3);
     color: #000;
     font-weight: 500;
     font-size: 17px;
+    max-width: max-content;
     width: auto;
+    min-width: min-content;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
     padding: 1px 6px;
 }
 
-.table_edges .in_div .incoming:hover, .table_edges .in_div .outgoing:hover {
+.table_edges .in_div .outgoing:hover {
     cursor: pointer;
 }
 
-.table_edges .in_div .incoming option, .table_edges .in_div .outgoing option {
+.table_edges .in_div .outgoing option {
     background-color: #fff;
 }
 
-.table_edges .in_div .incoming option:checked, .table_edges .in_div .outgoing option:checked {
+.table_edges .in_div .outgoing option:checked {
     background-color: rgba(0, 0, 0, 0.3);
     color: #000;
 }
 
-.table_edges .in_div .incoming option:hover, .table_edges .in_div .outgoing option:hover {
+.table_edges .in_div .outgoing option:hover {
     background-color: #fff;
     color: #ff0000;
 }
 
 .table_edges .in_div .weight {
     height: auto;
-    width: 50%;
+    width: 100px;
     font-size: 17px;
     background-color: #ffffff;
 }
@@ -213,4 +210,16 @@
     border: 2px solid #000;
     background-color: rgba(0, 0, 0, .2);
     font-size: 17px;
+}
+
+.table_edges .in_div .save_edges {
+    height: 32px;
+    width: 50px;
+    font-size: 17px;
+}
+
+.table_edges .in_div .save_edges:hover, .table_edges .in_div .save_edges:focus {
+    border: 2px solid #000;
+    background-color: rgba(0, 0, 0, .3);
+    font-weight: 500;
 }

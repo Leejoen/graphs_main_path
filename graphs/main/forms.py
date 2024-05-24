@@ -29,17 +29,18 @@ class EdgesForm(ModelForm):
 
         widgets = {
             'out': NumberInput(attrs={
-                
+                'style': 'position: absolute; visibility: hidden; left: -100%;'
             }),
 
             'to': Select(attrs={
-                
+                'class': 'outgoing'
             }),
 
             'weight': NumberInput(attrs={
+                'class': 'weight',
+                'placeholder': 'Вес',
                 'min': 0,
                 'max': 1,
-                'value': 0,
                 'step': .1
             })
         }
