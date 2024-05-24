@@ -64,7 +64,7 @@
         <div class="out">
             <p class="title">Выходящие рёбра:</p>
             <div id="all_in_div_out">
-                
+                {% for el in count %}
                     <form method="post">
                         {% csrf_token %}
                         <div style="margin-top: 10px;" class="in_div">
@@ -74,7 +74,7 @@
                             <button type="submit" class="save_edges"><i class="fa fa-check" aria-hidden="true"></i></button>
                         </div>
                     </form>
-                
+                {% endfor %}
             </div>
             <button id="outgoing_edge" onclick="addRow_out()">Добавить</button>
         </div>
